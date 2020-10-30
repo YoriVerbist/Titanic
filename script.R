@@ -98,9 +98,6 @@ combine <- mutate(combine,
                   family = SibSp + Parch,
                   alone = (SibSp == 0) & (Parch == 0),
                   large_family = (SibSp > 2) | (Parch > 3),
-                  deck = if_else(is.na(Cabin),"U",str_sub(Cabin,1,1)),
-                  ttype = str_sub(Ticket,1,1),
-                  bad_ticket = ttype %in% c('1', '5', '6', '7', '8', 'A', 'F', 'W')
 )
 
 # Put the correct data back in the correct dataset
